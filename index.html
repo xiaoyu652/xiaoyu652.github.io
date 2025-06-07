@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩光彧 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(120deg, #1a2980, #26d0ce);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+        
+        .contact-item i {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        main {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #1a2980;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #26d0ce;
+            display: inline-block;
+        }
+        
+        .education-item, .experience-item, .skill-category {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f9fbfd;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+        }
+        
+        .education-item:hover, .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .institution {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a2980;
+            margin-bottom: 5px;
+        }
+        
+        .location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .details {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            color: #555;
+        }
+        
+        .courses, .highlights {
+            margin-top: 15px;
+        }
+        
+        .courses h4, .highlights h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #26a69a;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: #1a2980;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .self-eval {
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #26d0ce;
+        }
+        
+        .self-eval p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1a2980;
+            color: white;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            main {
+                padding: 25px;
+            }
+            
+            .details {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: 20px;
+            right: 50px;
+        }
+        
+        .decoration:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            top: 100px;
+            right: 200px;
+        }
+        
+        .decoration:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 180px;
+            right: 100px;
+        }
+        
+        /* 部署方案部分 */
+        .deployment-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #1a2980;
+        }
+        
+        .deployment-section h2 {
+            color: #1a2980;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .deployment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .option-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        
+        .option-card h3 {
+            color: #1a2980;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .option-card h3 i {
+            background: #26d0ce;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .option-card ul {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        .option-card li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .option-card li:before {
+            content: "•";
+            color: #26d0ce;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1a2980;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #26d0ce;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="decoration"></div>
+            <div class="decoration"></div>
+            <div class="decoration"></div>
+            <div class="header-content">
+                <h1 class="name">韩光彧</h1>
+                <div class="title">江苏科技大学 · 计算机学院学生</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>17635309266</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>3504268149@qq.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>计算机类 · 2028年毕业</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="section">
+                <h2 class="section-title">教育背景</h2>
+                
+                <div class="education-item">
+                    <h3 class="institution">江苏科技大学</h3>
+                    <div class="location">江苏 · 计算机学院 · 计算机类</div>
+                    <div class="details">
+                        <span>2024年9月 - 至今</span>
+                        <span>预计毕业：2028年</span>
+                    </div>
+                    <div class="courses">
+                        <h4>主修课程</h4>
+                        <ul>
+                            <li>高等数学</li>
+                            <li>计算机导论</li>
+                            <li>计算机程序设计（C++）</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <h3 class="institution">平定第一中学校</h3>
+                    <div class="location">阳泉</div>
+                    <div class="details">
+                        <span>毕业时间：2024年6月</span>
+                    </div>
+                    <div class="highlights">
+                        <h4>突出亮点</h4>
+                        <ul>
+                            <li>高考成绩552分</li>
+                            <li>重要奖项：学习标兵</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">技能与证书</h2>
+                
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> 计算机技能</h3>
+                        <ul>
+                            <li>熟练使用 Microsoft Office（Word, Excel, PowerPoint）</li>
+                            <li>熟悉 C++ 编程语言</li>
+                            <li>了解 Photoshop 基础</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-certificate"></i> 证书</h3>
+                        <ul>
+                            <li>机动车驾驶证</li>
+                            <li>普通话二级甲等</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">校园经历与活动</h2>
+                
+                <div class="experience-item">
+                    <h3 class="institution">江苏科技大学学生会文体部 · 干事</h3>
+                    <div class="details">
+                        <span>2024年10月 - 至今</span>
+                    </div>
+                    <ul>
+                        <li>参与计算机学院迎新晚会的策划与执行</li>
+                        <li>负责场地联络、宣传物料设计</li>
+                        <li>积极参加社团例会与培训</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="institution">平定第一中学校 · 班长</h3>
+                    <div class="details">
+                        <span>2021年9月 - 2024年6月</span>
+                    </div>
+                    <ul>
+                        <li>负责班级日常事务管理，组织策划元旦晚会等班级活动</li>
+                        <li>提升组织协调能力，作为师生沟通桥梁</li>
+                        <li>协助老师处理事务，服务同学</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">自我评价</h2>
+                <div class="self-eval">
+                    <p>对计算机充满热情，具备较强的自主学习能力和逻辑思维能力。</p>
+                    <p>在高中担任班长期间，锻炼了组织协调能力、团队协作能力和责任心。</p>
+                    <p>积极融入大学生活，主动参与社团活动，渴望在学生会中贡献自己的力量，并不断学习成长。</p>
+                </div>
+            </section>
+            
+            <!-- 部署方案部分 -->
+            <section class="deployment-section">
+                <h2>零成本部署方案</h2>
+                <p>以下是为您推荐的免费部署方案，无需任何费用即可将简历发布到互联网：</p>
+                
+                <div class="deployment-options">
+                    <div class="option-card">
+                        <h3><i class="fab fa-github"></i> GitHub Pages</h3>
+                        <ul>
+                            <li>免费托管静态网站</li>
+                            <li>使用 <code>username.github.io</code> 域名</li>
+                            <li>支持自定义域名</li>
+                            <li>自动部署，更新方便</li>
+                            <li>适合开发者展示项目</li>
+                        </ul>
+                        <a href="https://pages.github.com/" class="btn" target="_blank">访问 GitHub Pages</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <h3><i class="fas fa-cloud"></i> Netlify</h3>
+                        <ul>
+                            <li>专业的静态网站托管平台</li>
+                            <li>拖拽上传即可部署</li>
+                            <li>免费SSL证书</li>
+                            <li>全球CDN加速</li>
+                            <li>支持自定义域名</li>
+                        </ul>
+                        <a href="https://www.netlify.com/" class="btn" target="_blank">访问 Netlify</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <h3><i class="fab fa-google"></i> Google Sites</h3>
+                        <ul>
+                            <li>谷歌提供的免费建站服务</li>
+                            <li>拖拽式编辑器，无需代码</li>
+                            <li>使用 <code>sites.google.com/view/yourname</code> 域名</li>
+                            <li>与Google生态无缝集成</li>
+                            <li>适合非技术用户</li>
+                        </ul>
+                        <a href="https://sites.google.com/" class="btn" target="_blank">访问 Google Sites</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <h3><i class="fas fa-code"></i> Vercel</h3>
+                        <ul>
+                            <li>开发者友好的部署平台</li>
+                            <li>极速全球CDN</li>
+                            <li>自动SSL证书</li>
+                            <li>支持GitHub/GitLab自动部署</li>
+                            <li>免费自定义域名支持</li>
+                        </ul>
+                        <a href="https://vercel.com/" class="btn" target="_blank">访问 Vercel</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; background: #e3f2fd; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #1a2980; margin-bottom: 15px;">部署步骤指南：</h3>
+                    <ol style="padding-left: 30px;">
+                        <li>将本页HTML代码保存为 <code>index.html</code> 文件</li>
+                        <li>选择上述任一平台创建账户</li>
+                        <li>上传HTML文件（或连接GitHub仓库）</li>
+                        <li>按照平台指引完成部署</li>
+                        <li>获取平台提供的免费域名</li>
+                        <li>（可选）绑定自定义域名</li>
+                    </ol>
+                    <p style="margin-top: 15px; font-style: italic;">提示：GitHub Pages和Netlify是最受开发者欢迎的选择，部署过程约5-10分钟。</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2024 韩光彧 - 个人简历 | 最后更新于 2025年6月</p>
+        </footer>
+    </div>
+</body>
+</html>
